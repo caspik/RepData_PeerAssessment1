@@ -89,14 +89,7 @@ The missing values will be filled with the means for the 5-minutes intervals.
    
 
 ```r
-activity <- merge(activitydata, steps.5min, by = "interval", suffixes = c("", ".y"))
-```
-
-```
-## Error: object 'activitydata' not found
-```
-
-```r
+activity <- merge(activity.data, steps.5min, by = "interval", suffixes = c("", ".y"))
 nas <- is.na(activity$steps)
 activity$steps[nas] <- activity$steps.y[nas]
 activity <- activity[, c(1:3)]

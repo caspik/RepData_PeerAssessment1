@@ -273,13 +273,8 @@ for that 5-minute interval, etc.</li>
 the missing data filled in.</li>
 </ol>
 
-<pre><code class="r">activity &lt;- merge(activitydata, steps.5min, by = &quot;interval&quot;, suffixes = c(&quot;&quot;, &quot;.y&quot;))
-</code></pre>
-
-<pre><code>## Error: object &#39;activitydata&#39; not found
-</code></pre>
-
-<pre><code class="r">nas &lt;- is.na(activity$steps)
+<pre><code class="r">activity &lt;- merge(activity.data, steps.5min, by = &quot;interval&quot;, suffixes = c(&quot;&quot;, &quot;.y&quot;))
+nas &lt;- is.na(activity$steps)
 activity$steps[nas] &lt;- activity$steps.y[nas]
 activity &lt;- activity[, c(1:3)]
 </code></pre>
