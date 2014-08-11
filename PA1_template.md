@@ -14,7 +14,7 @@ activity.data <- read.csv("activity.csv")
 ```r
 steps.per.day <- aggregate(steps ~ date, data = activity.data, FUN = sum)
 barplot(steps.per.day$steps, names.arg = steps.per.day$date, xlab = "date", ylab = "steps")
-title(main = "Death Rates in Virginia", font.main = 4)
+title(main = "The total number of steps taken each day", font.main = 4)
 ```
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
@@ -82,8 +82,7 @@ sum(is.na(steps.5min))
    example, you could use the mean/median for that day, or the mean
    for that 5-minute interval, etc.
 
-I will use the means for the 5-minute intervals as fillers for missing
-values.
+The missing values will be filled with the means for the 5-minutes intervals.
 
 3. Create a new dataset that is equal to the original dataset but with
    the missing data filled in.
@@ -142,7 +141,6 @@ estimating the total number of steps per day.
 1. Create a new factor variable in the dataset with two levels --
    "weekday" and "weekend" indicating whether a given date is a
    weekday or weekend day.
-
 
 
 ```r
